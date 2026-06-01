@@ -103,13 +103,17 @@ check_dependencies() {
 }
 
 # ─── Fetch latest version via GitHub API (Option A) ──────────────────────────
+# Falls back to the main branch when the repo has no published releases yet.
 fetch_latest_version() {
     local response
     response=$(curl -s "https://api.github.com/repos/$REPO/releases/latest") \
         || die "Failed to reach GitHub API."
 
     LATEST=$(echo "$response" | grep '"tag_name"' | sed 's/.*"tag_name": *"\(.*\)".*/\1/')
-    [ -n "$LATEST" ] || die "Could not determine latest version. The repository may have no published releases yet."
+    if [ -z "$LATEST" ]; then
+        LATEST="main"
+        line "Latest release" "none — using main branch"
+    fi
 }
 
 # ─── Fetch or copy source files ───────────────────────────────────────────────
