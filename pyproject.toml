@@ -35,3 +35,13 @@ Issues = "https://github.com/yannmasoch/nautilus-my-computer/issues"
 
 [tool.setuptools]
 py-modules = ["nautilus-my-computer"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+# E/W = pycodestyle, F = pyflakes, I = isort
+
+[tool.ruff.format]
+quote-style = "double"
