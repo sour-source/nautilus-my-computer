@@ -17,12 +17,14 @@ This roadmap reflects planned fixes, features, and improvements. It is subject t
 
 ## v0.3.0 — Native sidebar entry
 - feat: native Computer button at the top of the left sidebar, replacing the bookmark approach
+- feat: right-click context menu on Computer sidebar row (Open, Open in New Tab, Open in New Window, Settings)
+- fix: Computer sidebar button selected when Computer view is active
 - chore: remove old bookmark and bookmark-related code
 - chore: remove Restore Bookmark button from preferences
+- refactor: remove dead code (hamburger menu helpers, orphaned functions)
 
-## v0.3.1 — Bookmark naming
-- feat: bookmark Computer name does not change with language
-- feat: add Italian, Spanish and Portuguese translations 
+## v0.3.1 — Translations
+- feat: add Italian, Spanish and Portuguese translations
 
 ## v0.3.2 — Disk cards bug fixes
 - fix: disk cards not always updating during file transfers
